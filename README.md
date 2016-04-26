@@ -1,15 +1,8 @@
-# Interactive Rugby Gallery
+# Interactive Baftas Gallery
 
-Interactive Rugby Gallery. Using interactive template. 
+Interactive Baftas Gallery. Using interactive template. 
 
-Headline: 
-Game on: Stars of the Rugby World Cup prepare to kick off
 
-Current Boot: 
-https://interactive.guim.co.uk/2015/08/rugby-gallery/boot.js
-
-Alt Boot: 
-https://interactive.guim.co.uk/2015/08/rugby-gallery-alt/boot.js
 
 
 ## Getting started
