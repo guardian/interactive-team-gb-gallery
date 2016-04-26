@@ -14,7 +14,7 @@
   "homepage": "https://github.com/guardian/interactive-template",
   "config": {
     "port": 9000,
-    "s3_folder": "2015/08/rugby-gallery/",
+    "s3_folder": "2016/05/baftas-gallery/",
     "cdn_url": "https://interactive.guim.co.uk/2016/05/baftas-gallery/",
     "data_url": "https://interactive.guim.co.uk/spreadsheetdata/1Kg05zsGhLx9j7kyAGchrRvzlEKfUUARopV7Q_fOxnOw.json"
   },

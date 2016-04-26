@@ -70,6 +70,7 @@ define([
             screenSize = "big",
             projectByline = data['byline'],
             dataConfig = data.config,
+            imagePath = dataConfig.path,
             title = dataConfig.title,
             subtitle = dataConfig.subtitle,
             headline = $('header.content__head h1'),
@@ -77,7 +78,7 @@ define([
             byline = $('.content__main .content__meta-container.u-cf'),
             styleConfig = (dataConfig['style']) ? dataConfig['style'] : 'dark';
 
-        if($(window).width() < 965){
+        if($(window).width() < 600){
             screenSize = "small";
         }
 
@@ -107,6 +108,7 @@ define([
             return row;
         });
 
+        
 
 
 
@@ -124,7 +126,7 @@ define([
         if(typeof window.guardian === "undefined"){
             isWeb = false;
         }
-
+        console.log(imagePath)
         var templateData = { 
                 style: styleConfig,
                 rows: dataRows,
@@ -133,9 +135,12 @@ define([
                 standfirst: standfirst + " (Click through to read the full interviews)",
                 screenSize: screenSize,
                 byline: byline,
-                isWeb: isWeb
+                isWeb: isWeb,
+                imagePath: imagePath
             },
             pageHtml = Mustache.render(template, templateData);
+        
+        console.log(templateData)
 
         $('.element-interactive.interactive').html(pageHtml);
 
