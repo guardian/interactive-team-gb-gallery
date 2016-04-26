@@ -24,12 +24,12 @@ figure.element-interactive {
     position: relative;
 	margin:0;
     background-color: rgb(210,50,98);
-    background-image:url(../imgs/halftone_pattern2.png);
-    background-position: center -200px;
-    background-repeat: no-repeat;
+    // background-image:url(../imgs/halftone_pattern2.png);
+    // background-position: center -200px;
+    // background-repeat: no-repeat;
     background-size: 100%;
     // opacity: 0.2;
-    background-blend-mode: multiply;
+    // background-blend-mode: multiply;
 }
 
 figure.element-interactive:before {

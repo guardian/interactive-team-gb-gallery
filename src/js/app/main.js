@@ -126,7 +126,7 @@ define([
         if(typeof window.guardian === "undefined"){
             isWeb = false;
         }
-        console.log(imagePath)
+       
         var templateData = { 
                 style: styleConfig,
                 rows: dataRows,
@@ -150,7 +150,7 @@ define([
         });
 
         lazyLoad();
-        colourShift(container);
+        // colourShift(container);
 
         return this;
     };
