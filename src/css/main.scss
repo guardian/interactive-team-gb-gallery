@@ -1,0 +1,148 @@
+/**
+ * Project: Project name 
+ * File:    Main SCSS
+ */
+
+
+$guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
+
+@import '../../bower_components/pasteup-palette/src/_palette.scss';
+@import '../../bower_components/guss-webfonts/src/_webfonts.scss';
+@import '../../bower_components/guss-typography/_typography.scss';
+
+@import 'partials/reset';
+@import 'partials/fonts';
+
+@import 'site';
+@include guss-webfonts();
+@include guss-typography-defaults;
+
+body{
+	margin:0;
+}
+figure.element-interactive {
+    position: relative;
+	margin:0;
+    background-color: rgb(210,50,98);
+    background-image:url(../imgs/halftone_pattern2.png);
+    background-position: center -200px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    // opacity: 0.2;
+    background-blend-mode: multiply;
+}
+
+figure.element-interactive:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+#colour-shift-container {
+    transition: background 1s ease;
+    // background-color: #3498db;
+}
+
+#article-body.interactivePadding{
+    padding-left:0;
+    padding-right:0;
+}
+
+.interactiveStyling .content__main .content__meta-container.u-cf{
+    display:none
+}
+
+.interactiveStyling .content__main .guInteractive .content__meta-container.u-cf{
+    display:block;
+}
+
+.interactiveStyling header.content__head.u-cf{
+    display:none;
+}
+
+// OVERRIDES: 
+.interactiveStyling header.content__head.u-cf { 
+    display: block;
+}
+
+.interactiveStyling header.content__head.u-cf .content__labels,
+.interactiveStyling header.content__head.u-cf .content__headline,
+.interactiveStyling header.content__head.u-cf .content__standfirst,
+.interactiveStyling header.content__head.u-cf .content__dateline {
+    display: none;
+}
+
+.interactiveStyling header.content__head.u-cf #dfp-ad--spbadge { 
+    display: block;
+}
+
+// END OVERRIDES 
+
+.interactiveStyling .content__main .gs-container{
+    padding:0;
+}
+
+.interactiveStyling .element.element-interactive.interactive{
+    margin-top:0
+}
+
+.interactiveStyling.l-side-margins:before,.interactiveStyling.l-side-margins:after{
+    background-color:#1a1a1a;
+}
+
+.interactiveStyling .content__main.tonal__main.tonal__main--tone-news .gs-container{
+	background-color:#000;
+}
+
+.interactiveStyling .guInteractive .meta__numbers.modern-visible{
+	display:none;
+}
+
+.interactiveStyling .content--interactive .social{
+    padding-bottom:34px;
+}
+
+.interactiveStyling .byline { display: block; }
+
+
+.interactiveStyling .content__standfirst p em {
+    font-style: italic;
+}
+
+.interactiveStyling{
+    .meta__social{
+        border-top:none;
+    }
+    @media (min-width: 46.25em){
+        .byline{
+            padding-right:0;
+            width:auto;
+        }
+    }
+    @media (min-width: 61.25em){
+        .content--interactive .content__meta-container .meta__extras{
+            position:relative;
+        }
+
+        .content--interactive .content__meta-container .meta__social, .content--interactive .content__meta-container .meta__numbers{
+            float:none;
+        }
+
+    }
+    @media(min-width:71.25em){
+        .content__meta-container--float{
+            float:none;
+        }
+        .byline{
+            padding-top:0.5em;
+        }
+
+        .social__item{
+            // padding-right:35px;
+        }
+    }
+}

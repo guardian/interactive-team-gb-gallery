@@ -1,0 +1,63 @@
+<div class="guInteractive {{style}}">
+    {{#isWeb}}
+    <header>
+        <h2>{{title}}</h2>
+        <h3>{{subtitle}}</h3>
+        <h4>{{{standfirst}}}</h4>
+        {{{byline}}}
+    </header>
+    {{/isWeb}}
+    
+    <div id="rows">
+        {{#rows}}
+            <div class="rowContainer {{align}} {{rowClass}}" data-row="{{id}}">
+                {{#isRow}}
+                <img src="{{assets}}/imgs/empty.gif" data-clr="{{clr}}" data-echo="{{assets}}/imgs/{{id}}-{{screenSize}}.jpg" />
+                <div class="rowInformation">
+                    <div class="rowMeta">
+                        <h5>{{name}}</h5>
+                        <h6>{{subhead}}</h6>
+                        {{#caption}}
+                        <h6 class="caption">{{{.}}}</h6>
+                        {{/caption}}
+                    </div>
+                    <div class="rowDescription">
+                        <div class="descriptionShort">
+                            {{#excerpt}}
+                                <p>{{{.}}}</p>
+                            {{/excerpt}}
+                            <button class="collapseButton" data-toggle="readMore" data-row="{{id}}">Read more</button>
+                        </div>
+                        <div class="descriptionLong">
+                            {{#fulltext}}
+                                <p>{{{.}}}</p>
+                            {{/fulltext}}
+                            {{#info}}
+                            <h6 class="caption secondary">{{{info}}}</h6>
+                            {{/info}}
+                            <button class="collapseButton" data-toggle="readLess" data-row="{{id}}">Close</button>
+                        </div>
+                    </div>
+                    {{/isRow}}
+                </div>
+                {{^isRow}}
+                <div class="rowInformation {{rowClass}}">
+                    <div class="rowMeta">
+                        <h5>{{subhead}}</h5>
+                    </div>
+                    <div class="rowDescription">
+                        <div class="descriptionLong">
+                            {{#fulltext}}
+                                <p>{{{.}}}</p>
+                            {{/fulltext}}
+                            {{#info}}
+                            <h6 class="caption secondary">{{{info}}}</h6>
+                            {{/info}}
+                        </div>
+                    </div>
+                </div>
+                {{/isRow}}
+            </div>
+        {{/rows}}
+    </div>
+</div>
