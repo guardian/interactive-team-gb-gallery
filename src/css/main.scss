@@ -32,15 +32,15 @@ figure.element-interactive {
     // background-blend-mode: multiply;
 }
 
-figure.element-interactive:before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left:0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-}
+// figure.element-interactive:before {
+//     content: " ";
+//     position: absolute;
+//     top: 0;
+//     left:0;
+//     bottom: 0;
+//     right: 0;
+//     width: 100%;
+// }
 
 #colour-shift-container {
     transition: background 1s ease;

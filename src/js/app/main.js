@@ -20,7 +20,7 @@ define([
     
     // Your proxied Google spreadsheet goes here
     var key = '1I0QaErXTMHpTbPZvCCXrqg4tgsWsVTyGGLHRNsFGb1c', 
-        archUrl = 'http://interactive.guim.co.uk/docsdata-test/'+key+'.json';
+        archUrl = 'https://interactive.guim.co.uk/docsdata-test/'+key+'.json';
 
     function init(el, context, config, mediator) {
         // DEBUG: What we get given on boot
@@ -100,6 +100,8 @@ define([
                 return paragraph.length > 5;
             });
 
+            row.firstParagraph = row.fulltext[0];
+
             excerptparagraphs = excerptparagraphs || [];
 
             row.excerpt = excerptparagraphs.filter(function(paragraph){
@@ -124,21 +126,20 @@ define([
         byline = (byline.length > 0) ? $(byline).get(0).outerHTML : "";
 
         if(typeof window.guardian === "undefined"){
-            isWeb = false;
+            // isWeb = false;
         }
-       
+        console.log(dataRows)
         var templateData = { 
-                style: styleConfig,
-                rows: dataRows,
-                title: title,
-                subtitle:subtitle,
-                standfirst: standfirst + " (Click through to read the full interviews)",
-                screenSize: screenSize,
-                byline: byline,
-                isWeb: isWeb,
-                imagePath: imagePath
-            },
-            pageHtml = Mustache.render(template, templateData);
+            style: styleConfig,
+            rows: dataRows,
+            title: title,
+            subtitle:subtitle,
+            standfirst: standfirst + " (Click through to read the full interviews)",
+            screenSize: screenSize,
+            byline: byline,
+            isWeb: isWeb,
+            imagePath: imagePath
+        },pageHtml = Mustache.render(template, templateData);
         
         console.log(templateData)
 
