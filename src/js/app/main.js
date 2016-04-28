@@ -22,6 +22,8 @@ define([
     var key = '1I0QaErXTMHpTbPZvCCXrqg4tgsWsVTyGGLHRNsFGb1c', 
         archUrl = 'https://interactive.guim.co.uk/docsdata-test/'+key+'.json';
 
+    var config;
+
     function init(el, context, config, mediator) {
         // DEBUG: What we get given on boot
         // console.log(el, context, config, mediator);
@@ -73,14 +75,15 @@ define([
             imagePath = dataConfig.path,
             title = dataConfig.title,
             subtitle = dataConfig.subtitle,
-            headline = $('header.content__head h1'),
-            standfirst = $('header.content__head .content__standfirst p'),
-            byline = $('.content__main .content__meta-container.u-cf'),
+            standfirst = dataConfig.standfirst,
+            byline = dataConfig.byline,
             styleConfig = (dataConfig['style']) ? dataConfig['style'] : 'dark';
 
         if($(window).width() < 600){
             screenSize = "small";
         }
+
+        config = data.config;
 
         var dataRows = data.rows.map(function(row, i){
             var paragraphs = (row.fulltext) ? row.fulltext.split('\n') : "",
@@ -101,7 +104,7 @@ define([
             });
 
             row.firstParagraph = row.fulltext[0];
-
+            row.fulltext.shift()
             excerptparagraphs = excerptparagraphs || [];
 
             row.excerpt = excerptparagraphs.filter(function(paragraph){
@@ -110,25 +113,11 @@ define([
             return row;
         });
 
-        
-
-
-
-        if(headline.length > 0){
-            headline = $(headline).get(0).textContent.split(':');
-            title = headline[0];
-            subtitle = headline[1];
-        }else{
-            headline = dataConfig.title;
-        }
-
-        standfirst = (standfirst.length > 0) ? $(standfirst).get(0).textContent : dataConfig.standfirst;
-        byline = (byline.length > 0) ? $(byline).get(0).outerHTML : "";
 
         if(typeof window.guardian === "undefined"){
             // isWeb = false;
         }
-        console.log(dataRows)
+        
         var templateData = { 
             style: styleConfig,
             rows: dataRows,
@@ -141,7 +130,6 @@ define([
             imagePath: imagePath
         },pageHtml = Mustache.render(template, templateData);
         
-        console.log(templateData)
 
         $('.element-interactive.interactive').html(pageHtml);
 
@@ -149,6 +137,10 @@ define([
             e.preventDefault();
             expandText(e);
         });
+
+        $('.share-button').on('click',function(e){
+            share(e)
+        })
 
         lazyLoad();
         // colourShift(container);
@@ -265,6 +257,33 @@ define([
         var slug = str.toLowerCase().trim().replace(regPat,'-');
         return slug; 
     };
+
+    function share(e){
+        var btn = e.target;
+        var shareWindow;
+        var twitterBaseUrl = "http://twitter.com/share?text=";
+        var facebookBaseUrl = "https://www.facebook.com/dialog/feed?display=popup&app_id=741666719251986&link=";
+        var shareImage = "";
+        var shareUrl = config.shareUrl;
+        var shareMessage = config.sharetext;
+        console.log(config)
+
+        if(btn.className.indexOf('share-twitter') > -1){
+            shareWindow = twitterBaseUrl + 
+                            encodeURIComponent(shareMessage) + 
+                            "&url=" + 
+                            encodeURIComponent(shareUrl);
+
+        } else if( btn.className.indexOf('share-facebook') > -1 ){
+            shareWindow = facebookBaseUrl + 
+                            encodeURIComponent(shareUrl) + 
+                            "&picture=" + 
+                            encodeURIComponent(shareImage) + 
+                            "&redirect_uri=http://www.theguardian.com";
+        }
+
+        window.open(shareWindow, "Share", "width=640,height=320"); 
+    }
     
     return {
         init: init

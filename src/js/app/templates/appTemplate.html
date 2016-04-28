@@ -1,13 +1,16 @@
 <div class="guInteractive {{style}}">
     <div id="interactiveWrapper">
-   <!--  {{#isWeb}}
+    {{#isWeb}}
     <header>
         <h2>{{title}}</h2>
         <h3>{{subtitle}}</h3>
         <h4>{{{standfirst}}}</h4>
-        {{{byline}}}
+        <div id="share-buttons">
+            <div class="share-button share-twitter"></div>
+            <div class="share-button share-facebook"></div>
+        </div>
     </header>
-    {{/isWeb}} -->
+    {{/isWeb}}
     
         <div id="rows">
             {{#rows}}
