@@ -80,7 +80,7 @@
 	}
 	h4{
 		font-weight:normal;
-		font-size:21px;
+		font-size:18px;
 		line-height: 1.5em;
 		margin:0;
 
@@ -250,6 +250,10 @@
             background-color:#555;
         }
     }
+
+    footer{
+    	margin-top:60px;
+    }
 	@media(min-width:480px){
 		header{
 			margin-bottom:60px;
@@ -259,6 +263,9 @@
 		}
 		h3{
 			font-size:36px;
+		}
+		h4{
+			font-size:21px;
 		}
 		#interactiveWrapper{
 			padding:0 20px;

@@ -123,7 +123,7 @@ define([
             rows: dataRows,
             title: title,
             subtitle:subtitle,
-            standfirst: standfirst + " (Click through to read the full interviews)",
+            standfirst: standfirst,
             screenSize: screenSize,
             byline: byline,
             isWeb: isWeb,
