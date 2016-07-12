@@ -17,9 +17,9 @@ define([
     iframeMessenger
 ) {
    'use strict';
-    
+    // http://interactive.guim.co.uk/docsdata-test/1nDXpsJ5Tf2JF5CfCxL-7vZRpq1OM04tG-09Owyh4bHU.json
     // Your proxied Google spreadsheet goes here
-    var key = '1I0QaErXTMHpTbPZvCCXrqg4tgsWsVTyGGLHRNsFGb1c', 
+    var key = '1nDXpsJ5Tf2JF5CfCxL-7vZRpq1OM04tG-09Owyh4bHU', 
         archUrl = 'https://interactive.guim.co.uk/docsdata-test/'+key+'.json';
 
     var config;

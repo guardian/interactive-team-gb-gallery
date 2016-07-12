@@ -1,6 +1,6 @@
-# Interactive Baftas Gallery
+# Interactive Team GB Gallery
 
-Interactive Baftas Gallery. Using interactive template. 
+Interactive Team GB Gallery. Using interactive template. 
 
 
 
