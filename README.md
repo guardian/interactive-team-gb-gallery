@@ -4,6 +4,15 @@ Interactive Team GB Gallery. Using interactive template.
 
 
 
+Composer: 
+https://composer.gutools.co.uk/content/5784dd57e4b0630007c6ba91
+
+Google Doc: 
+https://docs.google.com/document/d/1nDXpsJ5Tf2JF5CfCxL-7vZRpq1OM04tG-09Owyh4bHU/edit
+
+Repo: 
+https://github.com/guardian/interactive-team-gb-gallery
+
 
 ## Getting started
 If you haven't already installed [nodejs](http://nodejs.org/download/)
