@@ -14,6 +14,20 @@ Repo:
 https://github.com/guardian/interactive-team-gb-gallery
 
 
+
+Ali Jawad (gv-tgb-ali-jawad)
+David Weir (gv-tgb-david-weir)
+Ellie Simmonds (gv-tgb-ellie-simmonds)
+Greg Rutherford (gv-tgb-greg-rutherford)
+Jonnie Peacock (gv-tgb-jonnie-peacock)
+Katarina Johnson-Thompson (gv-tgb-katarina-johnson-thompson)
+Louis Smith (gv-tgb-louis-smith)
+Maddie Hinch (gv-tgb-maddie-hinch)
+Nekoda Davis (gv-tgb-nekoda-davis)
+Tom Daley (gv-tgb-tom-daley)
+
+
+
 ## Getting started
 If you haven't already installed [nodejs](http://nodejs.org/download/)
 and [grunt-cli](http://gruntjs.com/getting-started), go do that first.
