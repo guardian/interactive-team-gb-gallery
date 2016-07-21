@@ -3,7 +3,7 @@
     {{#isWeb}}
     <header>
         <h2>{{title}}</h2>
-        <h3>{{subtitle}}</h3>
+        <h3 class="highlight-colour">{{subtitle}}</h3>
         <h4>{{{standfirst}}}</h4>
         <div id="share-buttons">
             <div class="share-button share-twitter"></div>
@@ -16,15 +16,18 @@
             {{#rows}}
                 <div class="rowContainer {{align}} {{rowClass}}" data-row="{{id}}">
                     {{#isRow}}
-                    <img src="{{imagePath}}imgs/empty.gif" data-clr="{{clr}}" data-echo="{{imagePath}}imgs/{{id}}-{{screenSize}}.jpg" />
+                    <img src="{{assets}}/imgs/empty.gif" data-clr="{{clr}}" data-echo="{{assets}}/imgs/{{id}}-{{screenSize}}.jpg" />
                     <div class="rowInformation">
                         <div class="rowMeta">
-                            <h5>{{name}}</h5>
+                            <h5 class="highlight-colour">{{name}}</h5>
+                            {{#subhead}}
+                            <h6>{{{subhead}}}</h6>
+                            {{/subhead}}
                         </div>
                         <div class="rowDescription">
                             <div class="descriptionShort">
                                 {{#excerpt}}
-                                    <p>{{{.}}}</p>
+                                    <p class="gv-quote highlight-colour">{{{.}}}</p>
                                 {{/excerpt}}
                                     <p class="firstPar">{{firstParagraph}}</p>
                                 <button class="collapseButton" data-toggle="readMore" data-row="{{id}}">Read more</button>
