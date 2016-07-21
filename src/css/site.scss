@@ -214,9 +214,31 @@
 		}
 	}
 
+	#gv-tgb-notes{
+		padding-top: 12px;
+		border-top: 1px solid #767676;
+
+		img,
+		.rowMeta,
+		.collapseButton{
+			display: none;
+		}
+		.descriptionLong{
+			display: block;
+		}
+		p{
+			margin-bottom: 6px;
+			max-width: 620px;
+		}
+	}
+
 	footer{
 		margin-bottom:60px;
 		font-weight:bold;
+		.credits {
+			color: #767676;
+			max-width: 620px;
+		}
 	}
 
 	.rowMeta{
@@ -352,16 +374,8 @@
 			max-width:980px;
 		}
 		header{
-			margin-bottom:150px;
+			margin-bottom:100px;
 			max-width:540px;
-			&:after{
-				margin-top: 60px;
-				height:4px;
-				width:140px;
-				background:#fff;
-				display:block;
-				content:''
-			}
 		}
 		.rowContainer{
 			margin-bottom:90px;

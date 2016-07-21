@@ -117,8 +117,11 @@ define([
         if(typeof window.guardian === "undefined"){
             // isWeb = false;
         }
+
+        console.log(config.credits)
         
         var templateData = { 
+            credits: config.credits,
             style: styleConfig,
             rows: dataRows,
             title: title,
