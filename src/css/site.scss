@@ -62,7 +62,6 @@
 			background: #f4f4f4;
 		}
 
-
 		.collapseButton {
 			color: #333;
 
@@ -72,6 +71,35 @@
 			}
 		}
 	} // light template
+
+	.rowContainer{
+		.img-wrap{
+			position: relative;
+			display: inline-block;
+			z-index: 1;
+			&.contains-loaded-img{
+				overflow: hidden;
+			}
+			img {
+				position: relative;
+				width: 100%;
+				max-width: 100%;
+				z-index: 2;
+			}
+			&#wrap-gv-tgb-ellie-simmonds{
+				&:after{
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: '';
+					width: 3261px;
+					height: 100%;
+					z-index: 1;
+					animation: transformedBackground 40s linear infinite; /* infinite */
+				}
+			}
+		}
+	}
 
 	a{
 		color:#f4f4f4;
@@ -183,7 +211,9 @@
 		}
 	}
 	.rowInformation{
+		position: relative;
 		padding: 0;
+		z-index: 2;
 
 		h5{
 			margin:0;
@@ -436,7 +466,7 @@
 			overflow:hidden;
 			max-width:1120px;
 			position:relative;
-			img{
+			.img-wrap{
 				width:540px;
 			}
 			.descriptionLong{
@@ -458,7 +488,7 @@
 			}
 			&.active{
 				z-index:100;
-				img{
+				.img-wrap{
 					-webkit-animation:shrink 1.5s;
 					width:380px;
 				}
@@ -476,12 +506,12 @@
 			
 		}
 		.align-left{
-			img{
+			.img-wrap{
 				float:left;
 			}
 		}
 		.align-right{
-			img{
+			.img-wrap{
 				float:right;
 			}
 		}
@@ -500,14 +530,14 @@
 			max-width:1140px;
 		}
 		.align-left,.align-right{
-			img{
+			.img-wrap{
 				width:620px;
 			}
 			.rowInformation{
 				width:480px;
 			}
 			&.active{
-				img{
+				.img-wrap{
 					-webkit-animation:shrinkbig 1.5s;
 					width:460px;
 				}
@@ -566,3 +596,7 @@
 }
 
 
+@-webkit-keyframes transformedBackground {
+	from { -webkit-transform: translateX(0); }
+	to { -webkit-transform: translateX(-100%); }
+}

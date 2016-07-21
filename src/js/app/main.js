@@ -249,7 +249,15 @@ define([
           throttle: 250,
           unload: false,
           callback: function (element, op) {
-            element.className += " img-loaded";
+            var img = element,
+                containingDiv = img.parentNode;
+
+            img.className += " img-loaded";
+            containingDiv.className += " contains-loaded-img";
+            if (containingDiv.id == "wrap-gv-tgb-ellie-simmonds"){
+                img.src = "{{assets}}/imgs/real/gv-tgb-ellie-simmonds-big.png"
+            }
+            // img.style.opacity = 0;
           }
         });
     };

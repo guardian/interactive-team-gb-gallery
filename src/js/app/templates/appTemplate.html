@@ -11,12 +11,21 @@
         </div>
     </header>
     {{/isWeb}}
+        <style>
+        {{#rows}}
+        #wrap-{{id}}.contains-loaded-img:after {
+            background-image: url('{{assets}}/imgs/backgrounds/{{id}}-{{screenSize}}-bg.jpg');
+        }
+        {{/rows}}
+        </style>
     
         <div id="rows">
             {{#rows}}
                 <div class="rowContainer {{align}} {{rowClass}}" id="{{id}}" data-row="{{id}}">
                     {{#isRow}}
-                    <img src="{{assets}}/imgs/empty.gif" data-clr="{{clr}}" data-echo="{{assets}}/imgs/real/{{id}}-{{screenSize}}.jpg" />
+                    <div class="img-wrap" id="wrap-{{id}}">
+                        <img src="{{assets}}/imgs/empty.gif" class="img-{{screenSize}}" data-clr="{{clr}}" data-echo="{{assets}}/imgs/real/{{id}}-{{screenSize}}.jpg" />
+                    </div>
                     <div class="rowInformation">
                         <div class="rowMeta">
                             <h5 class="highlight-colour">{{name}}</h5>
