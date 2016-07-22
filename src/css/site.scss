@@ -113,7 +113,13 @@
 				position: relative;
 				width: 100%;
 				max-width: 100%;
+				transition: opacity 0.3s ease-out;
+				opacity: 0;
 				z-index: 2;
+
+				&.img-loaded {
+				  opacity: 1;
+				}
 			}
 		}
 	}
