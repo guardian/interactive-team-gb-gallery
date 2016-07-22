@@ -11,12 +11,20 @@
         </div>
     </header>
     {{/isWeb}}
-        <style>
+        <style type="text/css">
         {{#rows}}
         #wrap-{{id}}.contains-loaded-img:after {
-            background-image: url('{{assets}}/imgs/backgrounds/{{id}}-{{screenSize}}-bg.jpg');
+            background-image: url('{{assets}}/imgs/backgrounds/{{id}}-small-bg.jpg');
         }
         {{/rows}}
+
+        @media(min-width:740px){
+            {{#rows}}
+            #wrap-{{id}}.contains-loaded-img:after {
+                background-image: url('{{assets}}/imgs/backgrounds/{{id}}-big-bg.jpg');
+            }
+            {{/rows}}
+        }
         </style>
     
         <div id="rows">
@@ -24,7 +32,12 @@
                 <div class="rowContainer {{align}} {{rowClass}}" id="{{id}}" data-row="{{id}}">
                     {{#isRow}}
                     <div class="img-wrap" id="wrap-{{id}}">
+                        {{#animated}}
+                        <img src="{{assets}}/imgs/empty.gif" class="img-{{screenSize}}" data-clr="{{clr}}" data-echo="{{assets}}/imgs/real/{{id}}-{{screenSize}}.png" />
+                        {{/animated}}
+                        {{^animated}}
                         <img src="{{assets}}/imgs/empty.gif" class="img-{{screenSize}}" data-clr="{{clr}}" data-echo="{{assets}}/imgs/real/{{id}}-{{screenSize}}.jpg" />
+                        {{/animated}}
                     </div>
                     <div class="rowInformation">
                         <div class="rowMeta">
