@@ -255,7 +255,13 @@ define([
             img.className += " img-loaded";
             containingDiv.className += " contains-loaded-img";
             if (containingDiv.id == "wrap-gv-tgb-ellie-simmonds"){
-                img.src = "{{assets}}/imgs/real/gv-tgb-ellie-simmonds-big.png"
+                img.src = "{{assets}}/imgs/real/gv-tgb-ellie-simmonds-big.png";
+            }
+            if (containingDiv.id == "wrap-gv-tgb-maddie-hinch"){
+                img.src = "{{assets}}/imgs/real/gv-tgb-maddie-hinch-big.png";
+            }
+            if (containingDiv.id == "wrap-gv-tgb-tom-daley"){
+                img.src = "{{assets}}/imgs/real/gv-tgb-tom-daley-big.png";
             }
             // img.style.opacity = 0;
           }

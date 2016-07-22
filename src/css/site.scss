@@ -79,24 +79,37 @@
 			z-index: 1;
 			&.contains-loaded-img{
 				overflow: hidden;
+				&#wrap-gv-tgb-ellie-simmonds{
+					&:after{
+						position: absolute;
+						top: 0;
+						left: 0;
+						content: '';
+						width: 3261px;
+						height: 100%;
+						z-index: 1;
+						animation: shiftBackground 40s linear 1;
+					}
+				}
+				&#wrap-gv-tgb-maddie-hinch,
+				&#wrap-gv-tgb-tom-daley{
+					&:after{
+						position: absolute;
+						top: 0;
+						left: 0;
+						content: '';
+						width: 3261px;
+						height: 100%;
+						z-index: 1;
+						animation: scaleBackground 10s linear 1;
+					}
+				}
 			}
 			img {
 				position: relative;
 				width: 100%;
 				max-width: 100%;
 				z-index: 2;
-			}
-			&#wrap-gv-tgb-ellie-simmonds{
-				&:after{
-					position: absolute;
-					top: 0;
-					left: 0;
-					content: '';
-					width: 3261px;
-					height: 100%;
-					z-index: 1;
-					animation: transformedBackground 40s linear infinite; /* infinite */
-				}
 			}
 		}
 	}
@@ -596,12 +609,36 @@
 }
 
 
-@-webkit-keyframes transformedBackground {
-	from { -webkit-transform: translateX(0); }
-	to { -webkit-transform: translateX(-70%); }
+/*  
+	ANIMATION - LEFT/RIGHT
+-----------------------------------*/
+
+@-webkit-keyframes shiftBackground {
+	from { -webkit-transform: translateX(-70%); }
+	to { -webkit-transform: translateX(0); }
 }
 
-@keyframes transformedBackground {
-	from { -webkit-transform: translateX(0); }
-	to { -webkit-transform: translateX(-70%); }
+
+
+/*  
+	ANIMATION - SCALE (FROM LEFT)
+-----------------------------------*/
+
+@-webkit-keyframes scaleBackground {
+	from { 
+		-webkit-transform: scale(1.05);
+		-webkit-transform-origin: top center; 
+	}
+	to { 
+		-webkit-transform: scale(1);
+		-webkit-transform-origin: top left; 
+	}
 }
+
+
+
+
+
+
+
+
