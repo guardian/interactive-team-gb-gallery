@@ -13,17 +13,25 @@
     {{/isWeb}}
         <style type="text/css">
         {{#rows}}
-        #wrap-{{id}}.contains-loaded-img:after {
-            background-image: url('{{assets}}/imgs/backgrounds/{{id}}-small-bg.jpg');
+        #wrap-{{id}}.animated-true.contains-loaded-img:after {
+            background-image: url('{{assets}}/imgs/real/{{id}}-small-bg.jpg');
         }
         {{/rows}}
 
+        #wrap-gv-tgb-jonnie-peacock.animated-true.contains-loaded-img:before {
+            background-image: url('{{assets}}/imgs/real/gv-tgb-jonnie-peacock-small.png');
+        }
+
         @media(min-width:740px){
             {{#rows}}
-            #wrap-{{id}}.contains-loaded-img:after {
-                background-image: url('{{assets}}/imgs/backgrounds/{{id}}-big-bg.jpg');
+            #wrap-{{id}}.animated-true.contains-loaded-img:after {
+                background-image: url('{{assets}}/imgs/real/{{id}}-big-bg.jpg');
             }
             {{/rows}}
+
+            #wrap-gv-tgb-jonnie-peacock.animated-true.contains-loaded-img:before {
+                background-image: url('{{assets}}/imgs/real/gv-tgb-jonnie-peacock-big.png');
+            }
         }
         </style>
     
@@ -31,9 +39,14 @@
             {{#rows}}
                 <div class="rowContainer {{align}} {{rowClass}}" id="{{id}}" data-row="{{id}}">
                     {{#isRow}}
-                    <div class="img-wrap" id="wrap-{{id}}">
+                    <div class="img-wrap animated-{{animated}}" id="wrap-{{id}}">
                         {{#animated}}
-                        <img src="{{assets}}/imgs/empty.gif" class="img-{{screenSize}}" data-clr="{{clr}}" data-echo="{{assets}}/imgs/real/{{id}}-{{screenSize}}.png" />
+                            {{#animatedExtra}}
+                            <img src="{{assets}}/imgs/empty.gif" class="img-{{screenSize}}" data-clr="{{clr}}" data-echo="{{assets}}/imgs/real/{{id}}-{{screenSize}}2.png" />
+                            {{/animatedExtra}}
+                            {{^animatedExtra}}
+                            <img src="{{assets}}/imgs/empty.gif" class="img-{{screenSize}}" data-clr="{{clr}}" data-echo="{{assets}}/imgs/real/{{id}}-{{screenSize}}.png" />
+                            {{/animatedExtra}}
                         {{/animated}}
                         {{^animated}}
                         <img src="{{assets}}/imgs/empty.gif" class="img-{{screenSize}}" data-clr="{{clr}}" data-echo="{{assets}}/imgs/real/{{id}}-{{screenSize}}.jpg" />

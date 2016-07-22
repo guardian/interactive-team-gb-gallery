@@ -4,6 +4,7 @@
 // image size - small: 
 // 660, 660
 
+body, html { height: 100%; }
 
 .guInteractive{
 	padding:1px 0;
@@ -81,6 +82,7 @@
 				overflow: hidden;
 				&#wrap-gv-tgb-tom-daley,
 				&#wrap-gv-tgb-ellie-simmonds,
+				&#wrap-gv-tgb-jonnie-peacock,
 				&#wrap-gv-tgb-maddie-hinch{
 					&:after{
 						position: absolute;
@@ -94,8 +96,8 @@
 				}
 				&#wrap-gv-tgb-ellie-simmonds{
 					&:after{
-						width: 3261px;
-						animation: shiftBackground 40s linear 1;
+						// width: 3261px;
+						animation: shiftBackground 5s linear 1;
 					}
 				}
 				&#wrap-gv-tgb-tom-daley{
@@ -110,8 +112,23 @@
 				}
 
 				&#wrap-gv-tgb-jonnie-peacock{
+					&:before,
+					&:after{
+						display: inline-block;
+						position: absolute;
+						top: 0;
+						left: 0;
+						content: '';
+						width: 100%;
+						height: 100%;
+						background-size: 100% 100%;
+						background-position: 0 0;
+					}
+					&:before {
+						z-index: 5;
+					}
 					img{
-						animation: flickerImage 3s linear 1;
+						animation: flickerImage 3s linear infinite;
 					}
 				}
 			}
@@ -632,7 +649,7 @@
 -----------------------------------*/
 
 @-webkit-keyframes shiftBackground {
-	from { -webkit-transform: translateX(-70%); }
+	from { -webkit-transform: translateX(-10%); }
 	to { -webkit-transform: translateX(0); }
 }
 
