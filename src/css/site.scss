@@ -598,5 +598,10 @@
 
 @-webkit-keyframes transformedBackground {
 	from { -webkit-transform: translateX(0); }
-	to { -webkit-transform: translateX(-100%); }
+	to { -webkit-transform: translateX(-70%); }
+}
+
+@keyframes transformedBackground {
+	from { -webkit-transform: translateX(0); }
+	to { -webkit-transform: translateX(-70%); }
 }
