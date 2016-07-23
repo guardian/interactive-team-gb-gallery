@@ -97,7 +97,7 @@
 				&#wrap-gv-tgb-ellie-simmonds{
 					&:after{
 						// width: 3261px;
-						animation: shiftBackground 5s linear 1;
+						animation: shiftBackground 15s linear 1;
 					}
 				}
 				&#wrap-gv-tgb-tom-daley{
@@ -652,22 +652,22 @@
 -----------------------------------*/
 
 @-webkit-keyframes shiftBackground {
-	from { -webkit-transform: translateX(-10%); }
+	from { -webkit-transform: translateX(-16%); }
 	to { -webkit-transform: translateX(0); }
 }
 
 @-moz-keyframes shiftBackground {
-	from { -webkit-transform: translateX(-10%); }
+	from { -webkit-transform: translateX(-16%); }
 	to { -webkit-transform: translateX(0); }
 }
 
 @-o-keyframes shiftBackground {
-	from { -webkit-transform: translateX(-10%); }
+	from { -webkit-transform: translateX(-16%); }
 	to { -webkit-transform: translateX(0); }
 }
 
 @keyframes shiftBackground {
-	from { -webkit-transform: translateX(-10%); }
+	from { -webkit-transform: translateX(-16%); }
 	to { -webkit-transform: translateX(0); }
 }
 
